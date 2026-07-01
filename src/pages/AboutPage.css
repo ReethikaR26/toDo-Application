@@ -1,0 +1,166 @@
+.notebook-page {
+  background: var(--paper, #fef9f0);
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-medium, 0 8px 30px rgba(0,0,0,0.12));
+  border: 1px solid var(--border-warm, #e8ddd0);
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(89, 58, 40, 0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(89, 58, 40, 0.15) 1px, transparent 1px);
+  background-size: 100% 40px, 8px 40px;
+  background-position: 0 39px, 0 39px;
+  color: #3d2e2b;
+  line-height: 48px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.notebook-page:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(89, 58, 40, 0.15);
+  padding-bottom: 20px;
+}
+
+.page-icon {
+  font-size: 2.5rem;
+}
+
+h1 {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #3d2e2b;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.about-content {
+  font-size: 1.05rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  color: #4a3a36;
+  background: rgba(255, 248, 240, 0.6);
+  padding: 20px 25px;
+  border-radius: 12px;
+  border-left: 4px solid #d4b8a0;
+}
+
+.features-section {
+  margin: 30px 0;
+}
+
+.features-section h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4a3a36;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  background: rgba(255, 248, 240, 0.4);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.features-list li:hover {
+  background: rgba(255, 248, 240, 0.8);
+  transform: translateX(4px);
+}
+
+.feature-icon {
+  font-size: 1.3rem;
+  min-width: 30px;
+}
+
+.tech-stack {
+  margin: 35px 0 25px;
+  padding: 18px 22px;
+  background: rgba(61, 46, 43, 0.05);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.tech-note {
+  font-size: 0.95rem;
+  color: #4a3a36;
+  margin: 0;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: #3d2e2b;
+  color: #fef9f0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin: 0 6px;
+  letter-spacing: 0.3px;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(89, 58, 40, 0.1);
+}
+
+.footer-note p {
+  font-size: 1rem;
+  color: #5a4a45;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .notebook-page {
+    padding: 25px 20px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .features-list li {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .tech-badge {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+  }
+}

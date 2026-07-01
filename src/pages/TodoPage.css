@@ -1,0 +1,37 @@
+.todo-controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px;
+    flex-wrap:wrap;
+}
+
+.task-counter{
+    font-weight:bold;
+}
+
+.filter-buttons{
+    display:flex;
+    gap:10px;
+    
+}
+.filter-buttons button:hover{
+  transform: translateY(-2px);
+}
+.filter-buttons button:active{
+  transform: translateY(-2px);
+  background: #78553d;
+}
+
+
+.filter-buttons button{
+    padding:9px 15px;
+    border:none;
+    border-radius:8px;
+    font: system-ui, 'Segoe UI', Roboto, sans-serif;
+    cursor:pointer;
+    background: #3d2e2b;
+  color: white;
+  font-weight: 300;
+  box-shadow: 0 2px 8px rgba(35, 24, 2, 0.3);
+}

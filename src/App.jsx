@@ -1,42 +1,43 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import TodoInput from './components/todoInput'
-import TodoList from './components/TodoList'
+import {
+  Routes,
+  Route
+} from "react-router-dom";
 
+import NavBar from './components/NavBar'
+import HomePage from './pages/HomePage.jsx';
+import TodoPage from './pages/TodoPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import UserContext from './context/UserContext';
 function App() {
-  const [todos, settodos] = useState([])
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
 
-  const addTodo = (todoItem) => {
-    const newTodo={
-      id: Date.now(),
-      text: todoItem,
-      completed: false
+    return savedUser ? JSON.parse(savedUser) : {
+      name : "", role : "User"
     }
-    settodos((prevTodo) => [...prevTodo,newTodo])
-  }
+  });
 
-  const deleteTodo = (id) => {
-    settodos((prevTodo) => prevTodo.filter((todo) => todo.id != id))
-
-  }
-
-  const toggleTodo = (id) => {
-    settodos((prevTodo) => prevTodo.map((todo) => {
-      if(todo.id===id) {
-        return {...todo ,
-          completed : !todo.completed
-        }
-      }
-      return todo
-    }))
+  const updateUser = (name) => {
+    const newUser = {name, role: "User"};
+    setUser(newUser);
+    localStorage.setItem("user", JSON.stringify(newUser))
   }
 
   return (
     <>
-      <TodoInput addTodo={addTodo}/>
-      <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
+    <UserContext.Provider value={{user,updateUser}} >
+    <NavBar />
+    <Routes>
+      <Route path='/' element={<HomePage/>} />
+      <Route path='/todos' element={<TodoPage/>} />
+      <Route path='/about' element={<AboutPage/>} />
+    </Routes>
+    </UserContext.Provider>
     </>
   )
+  
 }
 
 export default App

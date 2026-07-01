@@ -1,14 +1,29 @@
 import { useState } from "react"
-
+import './Todo.css';
 
 function TodoInput({addTodo}) {
 
     const [tempItem ,settempItem] = useState("")
 
+    const handleAdd = () => {
+        const trimmed= tempItem.trim()
+        if (!trimmed) return;
+        addTodo(trimmed);
+        settempItem("");
+    }
+
     return(
         <>
-            <input value={tempItem} onChange={(e) => settempItem(e.target.value)} placeholder="Enter new to-do item"/>
-            <button onClick={() => addTodo(tempItem)}>Add</button>
+        <section className="todo-input-container">
+            <input className='todo-input'
+             value={tempItem} 
+             onChange={(e) => settempItem(e.target.value)} 
+             placeholder="Enter new to-do item"
+             onKeyDown={(e) => {
+                if(e.key === "Enter") handleAdd();
+             }}/>
+            <button onClick={() => addTodo(tempItem)} className="add-button">Add</button>
+        </section>
         </>
         
     )

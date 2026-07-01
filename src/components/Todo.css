@@ -1,0 +1,234 @@
+
+
+.todo-input-container {
+  background: #3d2e2b;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(101, 101, 101, 0.1);
+  margin-bottom: 25px;
+  margin-top: 40px;
+  
+  display: flex;
+  gap: 12px;
+}
+.notebook-page {
+  background: var(--paper);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-warm);
+  position: relative;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(139, 115, 85, 0.04) 27px,
+      rgba(139, 115, 85, 0.04) 28px
+    );
+  width: 100%;
+  max-width: 1000px;
+  
+}
+.todo-input {
+  flex: 1;
+  border: 3px solid #e1d0c9;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  background-color: #bba7a3;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  
+ border-bottom: 2px solid rgba(89, 58, 40, 0.15);
+}
+
+.page-header h1 {
+  font: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.4rem;
+  color: #3d2e2b;
+  
+}
+
+.page-date {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  opacity: 0.7;
+}
+
+
+.todo-input:focus {
+  border-color: #c9c8c8;
+  border-right-width: 2px;
+  border-bottom: #241916;
+}
+
+.todo-input::placeholder {
+  color: #e9e6e2cb;
+}
+
+
+.add-button{ 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  background-color: #241916;
+  padding: 2px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.add-button:hover {
+  background: #bba7a3;
+  transform: translateY(-2px);
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+
+.delete-button{
+    background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+.delete-button:hover {
+  background: #a83b2f;
+  transform: translateY(-3px);
+}
+
+.delete-button:active {
+  transform: rotate(0deg) scale(0.95);
+}
+
+.todo-list-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 20px;
+  
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background: #241916;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid transparent;
+}
+
+.todo-item:hover{
+  transform: translateY(-4px);
+}
+.todo-item.completed {
+  opacity: .8;
+  border-left: 4px solid #bba7a3;
+}
+.todo-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #e1d0c9;
+  font-weight: 500;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+.completed-text{
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #bba7a3;
+}
+.todo-checkbox-lofi {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.todo-checkbox-lofi input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute; 
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 29px;
+  height: 29px;
+  border: 2px solid #e1d0c9;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  inset: 0;
+}
+
+.todo-checkbox-lofi:hover .checkmark {
+  border-color: #f8f6f5cb;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.todo-checkbox-lofi input:checked + .checkmark {
+  background-color: #bba7a3;
+  border-color: #bba7a3;
+}
+
+.todo-checkbox-lofi input:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #f0f0f0;
+  font-size: 22px;
+  font-weight: 500;
+  transform: translate(-50%, -50%) rotate(-0deg) scale(1);
+}
+.page-footer {
+  display: flex;
+  justify-content:right;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid var(--border-warm);
+  font-family: var(--font-primary);
+  color: var(--coffee-warm);
+  font-size: 1.1rem;
+}
+

@@ -1,0 +1,18 @@
+.notebook-page {
+  background: var(--paper);
+  padding: 70px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  border: 1px dashed var(--border-warm);
+  position: relative;
+  background-image: 
+  
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 37px,
+      rgba(49, 45, 39, 0.215) 39px,
+      rgba(56, 48, 38, 0.123) 40px
+    );
+  line-height: 48px; 
+}
