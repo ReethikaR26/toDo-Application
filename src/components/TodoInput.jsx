@@ -22,7 +22,7 @@ function TodoInput({addTodo}) {
              onKeyDown={(e) => {
                 if(e.key === "Enter") handleAdd();
              }}/>
-            <button onClick={() => addTodo(tempItem)} className="add-button">Add</button>
+            <button onClick={() => handleAdd()} className="add-button">Add</button>
         </section>
         </>
         
